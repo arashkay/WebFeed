@@ -1,0 +1,5 @@
+= Webfeed
+
+This project rocks and uses MIT-LICENSE.
+
+bundle exec guard

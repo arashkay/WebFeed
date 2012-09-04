@@ -1,0 +1,15 @@
+<h1>Resources</h1>
+<div>
+  <h2>Expired Resources</h2>
+  <%@expired.each do |resource|%>
+    <h3><%=resource.name%></h3>
+    <h4><%=resource.url%></h4>
+    <h5>every <%=resource.frequency%> minutes</h5>
+  <%end%>
+  <h2>Recently Checked Resources</h2>
+  <%@uptodated.each do |resource|%>
+    <h3><%=resource.name%></h3>
+    <h4><%=resource.url%></h4>
+    <h5>every <%=resource.frequency%> minutes</h5>
+  <%end%>
+</div>
