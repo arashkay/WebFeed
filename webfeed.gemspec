@@ -9,13 +9,15 @@ Gem::Specification.new do |s|
   s.version     = Webfeed::VERSION
   s.authors     = ["Arash Karimzadeh"]
   s.email       = ["arash@tectual.com.au"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Webfeed."
-  s.description = "TODO: Description of Webfeed."
+  s.homepage    = "https://github.com/tectual/WebFeed"
+  s.summary     = "Read feeds and republish from your website"
+  s.description = "Read feeds from all around the world and publish them within your website"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 3.2.8"
+  s.add_dependency "nokogiri"
+  s.add_dependency "paperclip", "~> 2.7"
 
   s.add_development_dependency "mysql2"
   s.add_development_dependency "rspec-rails"

@@ -7,5 +7,3 @@ gemspec
 
 gem "jquery-rails"
 gem 'ruby-debug'
-gem "paperclip"
-gem "nokogiri"
