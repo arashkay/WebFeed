@@ -1,0 +1,24 @@
+class <%= news.pluralize.camelcase %>Controller < ApplicationController
+
+  def index
+    @news = <%= news.camelcase %>.all 
+  end
+
+  def show
+    @news = <%= news.camelcase %>.find params[:id]
+    render :layout => 'webfeed'
+  end
+
+  def publish
+    @news = <%= news.camelcase %>.find params[:id]
+    @news.update_attributes( :is_published => true )
+    redirect_to root_path
+  end
+
+  def unpublish
+    @news = <%= news.camelcase %>.find params[:id]
+    @news.update_attributes( :is_published => false )
+    redirect_to root_path
+  end
+
+end

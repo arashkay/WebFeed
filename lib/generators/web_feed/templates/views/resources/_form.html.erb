@@ -1,0 +1,34 @@
+<%%= form_for @resource do |f| %>
+  <%% if @resource.errors.any? %>
+    <div class="errors">
+      <h2><%%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+      <ul>
+        <%% @resource.errors.full_messages.each do |msg| %>
+          <li><%%= msg %></li>
+        <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+  <div>
+    <%%= f.label :name %>
+  </div>
+  <div>
+    <%%= f.text_field :name %>
+  </div>
+  <div>
+    <%%= f.label :url %>
+  </div>
+  <div>
+    <%%= f.text_field :url %>
+  </div>
+  <div>
+    <%%= f.label :frequency %>
+  </div>
+  <div>
+    <%%= f.text_field :frequency %>
+  </div>
+  <div>
+    <%%= f.submit %> | <a href='<%%=<%=resource.pluralize%>_path%>'>back</a>
+  </div>
+<%%end%>

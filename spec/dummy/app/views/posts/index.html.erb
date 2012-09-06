@@ -1,0 +1,16 @@
+<h1>News</h1>
+<% @news.each do |news| %>
+  <div class='news <%= 'published' if news.is_published %>'>
+    <h2><a href='<%= "#{read_post_path(news.id, news.title.gsub(/\W+/, '-'))}.html" %>'><%= news.title %></a></h2>
+    <img src='<%= news.image.url(:thumb) %>'/><p class='inline desc'><%= news.description.html_safe %></p>
+    <%unless news.is_published%>
+      <%= form_tag publish_post_path(news.id) %>
+        <button>Publish</button>
+      </form>
+    <%else%>
+      <%= form_tag unpublish_post_path(news.id) %>
+        <button>Unpublish</button>
+      </form>
+    <%end%>
+  </div>
+<%end%>

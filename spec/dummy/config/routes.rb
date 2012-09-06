@@ -1,10 +1,20 @@
 Dummy::Application.routes.draw do
   
-  resources :news
-
   resources :keywords
 
-  resources :resources
+  resources :resources do
+    member do 
+      post :read
+    end
+  end
+
+  resources :posts do
+    member do
+      get "/:title(.:format)", :action => :show, :as => 'read'
+      post :publish
+      post :unpublish
+    end
+  end
 
   root :to => 'general#index'
   

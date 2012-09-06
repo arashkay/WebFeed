@@ -1,0 +1,29 @@
+<h1>Resources</h1>
+<div class='menu'>
+  <a href='<%%=new_<%=resource%>_path%>'>Add Resource</a>
+</div>
+<div>
+  <h2>Expired Resources</h2>
+  <%%@expired.each do |resource|%>
+    <div class='resource'>
+      <h3><%%=resource.name%></h3>
+      <h4><%%=resource.url%></h4>
+      <div class='frequency'>every <%%=resource.frequency%> minutes
+        <%%= form_tag read_<%=resource%>_path(resource.id) %>
+          <button>Update</button>
+        </form>
+         | <a href='<%%= edit_<%=resource%>_path resource.id %>'>Edit</a>
+      </div>
+    </div>
+  <%%end%>
+  <h2>Recently Checked Resources</h2>
+  <%%@uptodated.each do |resource|%>
+    <div class='resource'>
+      <h3><%%=resource.name%></h3>
+      <h4><%%=resource.url%></h4>
+      <div class='frequency'>every <%%=resource.frequency%> minutes
+        | <a href='<%%= edit_<%=resource%>_path resource.id %>'>Edit</a>
+      </div>
+    </div>
+  <%%end%>
+</div>

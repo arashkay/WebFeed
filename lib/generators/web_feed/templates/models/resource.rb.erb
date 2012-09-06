@@ -1,4 +1,4 @@
-class Resource < ActiveRecord::Base
+class <%= resource.camelcase %> < ActiveRecord::Base
   
   attr_accessible :frequency, :name, :url, :checked_at
 
@@ -10,7 +10,7 @@ class Resource < ActiveRecord::Base
   def read
     if self.checked_at.nil? || (DateTime.now.to_i - DateTime.parse(self.checked_at.utc.to_s).to_i)/60 > self.frequency
       reader = FeedReader::Reader.new self.url
-      news = reader.filter Keyword.includables_list
+      news = reader.filter <%= keyword.camelcase %>.includables_list
     end
     news
   end
@@ -18,7 +18,7 @@ class Resource < ActiveRecord::Base
   def read_and_update
     items = read
     items.each do |item|
-      Post.create :title => item[0], :description => item[1], :image_url => item[2], :url => item[3]
+      <%= news.camelcase %>.create :title => item[0], :description => item[1], :image_url => item[2], :url => item[3]
     end
     update_attributes( :checked_at => DateTime.now )
     items

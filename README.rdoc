@@ -1,5 +1,49 @@
 = Webfeed
 
-This project rocks and uses MIT-LICENSE.
+This project uses MIT-LICENSE.
+
+
+== Installation
+
+In <b>Rails 3</b>, add following line to your Gemfile and run the <tt>bundle</tt> command.
+
+  gem "web_feed"
+
+In <b>Rails 2</b>, add following line to your environment.rb file.
+
+  config.gem "web_feed"
+
+== Getting Started
+
+There couple of generators. you can run something like <tt>rails g web_feed:install -h</tt> to see what they do
+
+  web_feed:install
+  web_feed:resource
+  web_feed:keyword
+  web_feed:news
+  web_feed:add_image
+
+Running <tt>rails g web_feed:install -mvc</tt> will create all migrations, models, views, controllers and routings and a basic stylesheet file.
+
+In case you want to rename the entities you can run this command:
+
+  rails g web_feed:install -r [RESOURCE_NAME] -n [NEWS_NAME] -k [KEYWORD_NAME] -mvc
+  rails g web_feed:install -r resource -n post -k keyword -mvc
+
+=== Basic View
+
+Add following line to your main layout to see the WebFeed pages with basic styling
+
+  <%= stylesheet_link_tag    "webfeed", :media => "all" %>
+
+And add this line to see the what pages you have in WebFeed
+
+  <%= render 'layouts/webfeed' %>
+
+=== Try It
+
+After generating file and migrating <tt>rails db:migrate</tt>. Try to add some RSS resources such as <i>http://feeds.gizmodo.com.au/GizmodoAustralia</i> or <i>http://techcrunch.com/feed/</i> and some keywords such as <i>iphone</i>, <i>samsung</i> and <i>facebook</i>. Then try to update resources from index page.
+
+== Testing SPECS
 
 bundle exec guard

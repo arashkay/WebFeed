@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dummy</title>
+  <title>WebFeed</title>
   <%= stylesheet_link_tag    "webfeed", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= render 'layouts/webfeed' %>
+<body class='daily'>
 <%= yield %>
-
 </body>
 </html>

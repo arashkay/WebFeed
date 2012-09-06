@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body{
+  font-family: arial, tahoma;
+  font-size: 12px;
+  color: #111;
+}
+.menu{
+  background: #222;
+  font-size: 14px;
+  padding: 10px;
+}
+.menu a{
+  padding: 5px;
+  margin: 0px 10px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.menu a:hover{
+  background: #000;
+}
+h1,h2,h3,h4,h5{
+  font-size: 12px;
+  font-weight: bold;
+  color: #1975D1;
+  margin: 0px;
+  padding: 6px 0px 2px;
+}
+a{
+  color: #1975D1;
+}
+h1,
+h1 a{
+  font-size: 22px;
+  color: #2D519B;
+}
+h1 a,h2 a,h3 a,h4 a,h5 a{ text-decoration: none; }
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover{ text-decoration: underline; }
+h2{
+  font-size: 18px;
+  color: #D69808;
+}
+h3{
+  font-size: 16px;
+  color: #D6083B;
+}
+h4{
+  font-size: 14px;
+  color: #222;
+}
+h4, h5{
+  padding: 2px 0px 0px;
+}
+.inline{
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.resource,
+.news,
+.keyword{
+  border: #111 1px dashed;
+  background: #eee;
+  padding: 5px;
+  margin: 2px;
+}
+.news.published{
+  background: #EAD144;
+}
+.resource:hover,
+.news:hover,
+.keyword:hover{
+  background: #aaa;
+}
+.resource .frequency{
+  font-size: 12px;
+  font-weight: bold;
+  color: #1975D1;
+}
+.resource form{ display: inline; } 
+.resource a,
+.keyword a{ 
+  color: #444; 
+  padding: 0px 5px; 
+} 
+.errors{
+  background: #B22323;
+  border: #6D0303 1px solid;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+}
+.errors h2{
+  color: #fff;
+}
+.daily_header{
+  height: 140px;
+  border-bottom: #eee 3px solid;
+  background: #222;
+  color: #fff;
+  padding: 0px 10px;
+}
+.daily_header h2{
+  padding: 0px 0px 10px;
+}
+.daily_reader{
+  position: absolute;
+  top: 143px;
+  bottom: 0px;
+  width: 100%;
+}
+.daily_reader iframe{
+  width: 100%;
+  height: 100%;
+}
+body.daily{
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+.desc{
+  width: 800px;
+  vertical-align: top;
+  margin: 0px;
+  padding: 0px 10px;
+}
+.daily_header h1 span{
+  color: #E5D600;
+}
+.daily_header .desc{
+  width: 500px;
+}

@@ -1,0 +1,40 @@
+class <%= resource.pluralize.camelcase %>Controller < ApplicationController
+
+  def index
+    @expired = <%= resource.camelcase %>.expired
+    @uptodated = <%= resource.camelcase %>.uptodated
+  end
+
+  def read
+    @resource = <%= resource.camelcase %>.find params[:id]
+    @resource.read_and_update
+    redirect_to <%=resource.pluralize%>_path
+  end
+
+  def new
+    @resource = <%= resource.camelcase %>.new
+  end
+
+  def create
+    @resource = <%= resource.camelcase %>.new params[:<%=resource%>]
+    if @resource.save
+      redirect_to <%=resource.pluralize%>_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @resource = <%= resource.camelcase %>.find params[:id]
+  end
+
+  def update
+    @resource = <%= resource.camelcase %>.find params[:id]
+    if @resource.update_attributes(params[:<%=resource%>])
+      redirect_to <%=resource.pluralize%>_path
+    else
+      render :edit
+    end
+  end
+
+end

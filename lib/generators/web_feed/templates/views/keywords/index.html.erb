@@ -1,0 +1,14 @@
+<h1>Keywords</h1>
+<div class='menu'>
+  <a href='<%%=new_<%=keyword%>_path%>'>Add keyword</a>
+</div>
+<h2>Inclusive</h2>
+<%%@positive.each do |keyword|%>
+  <div class='keyword'><%%=keyword.phrase%> | <a href='<%%=edit_<%=keyword%>_path keyword.id%>'>Edit</a>
+  </div>
+<%%end%>
+<h2>Exclusive</h2>
+<%%@negative.each do |keyword|%>
+  <div class='keyword'><%%=keyword.phrase%> | <a href='<%%=edit_<%=keyword%>_path keyword.id%>'>Edit</a>
+  </div>
+<%%end%>

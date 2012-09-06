@@ -1,0 +1,9 @@
+<div class='daily_header'>
+  <h1><a href='<%%= <%=news%>_path %>'>Read More News <span>@ WebFeed</span></a></h1>
+  <h2><a href='<%%=@news.url%>' target='_blank'><%%= @news.title %></a></h2>
+  <img src='<%%= @news.image.url(:thumb) %>'/>
+  <p class='inline desc'><%%= truncate @news.description, :length => 400 %></p>
+</div>
+<div class='daily_reader'>
+  <iframe frameborder='0' src='<%%=@news.url%>'></iframe>
+</div>
