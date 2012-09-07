@@ -5,7 +5,7 @@ require "webfeed/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "webfeed"
+  s.name        = "Web Feed"
   s.version     = Webfeed::VERSION
   s.authors     = ["Arash Karimzadeh"]
   s.email       = ["arash@tectual.com.au"]

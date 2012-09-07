@@ -1,6 +1,6 @@
 = Webfeed
 
-This project uses MIT-LICENSE.
+This project uses MIT-LICENSE. It is created by Arash Karimzadeh @ <a href='www.ectual.com'>Tectual</a>.
 
 
 == Installation
@@ -43,6 +43,12 @@ And add this line to see the what pages you have in WebFeed
 === Try It
 
 After generating file and migrating <tt>rails db:migrate</tt>. Try to add some RSS resources such as <i>http://feeds.gizmodo.com.au/GizmodoAustralia</i> or <i>http://techcrunch.com/feed/</i> and some keywords such as <i>iphone</i>, <i>samsung</i> and <i>facebook</i>. Then try to update resources from index page.
+
+=== TODO
+
+* More test cases
+* Improve parser to cover more cases
+* Adding a way to parse non-standard xml formats
 
 == Testing SPECS
 
